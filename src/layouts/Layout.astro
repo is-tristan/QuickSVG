@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>QuickSVG - A Super Simple SVG Manipulator</title>
+		<meta name="description" content="QuickSVG is a simple and easy-to-use tool for creating and editing SVG files online." />
+		<meta name="keywords" content="SVG, SVG editor, vector graphics, online SVG, SVG manipulator" />
+		<meta property="og:title" content="QuickSVG - A Super Simple SVG Manipulator" />
+		<meta property="og:description" content="Create and edit SVG files easily with QuickSVG's intuitive interface." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="QuickSVG - A Super Simple SVG Manipulator" />
+		<meta name="twitter:description" content="Create and edit SVG files easily with QuickSVG." />
+		<link rel="canonical" href={Astro.url} />
+		<script src="/src/scripts/logic.js" type="module" is:inline />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>

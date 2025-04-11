@@ -1,0 +1,30 @@
+.topbar {
+    display: flex;
+    background: linear-gradient(90deg, var(--c-orange) 0%, var(--c-purple) 100%);
+    width: 100%;
+
+    .topbarWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 95%;
+        margin: 0 auto;
+        color: #fff;
+        text-align: center;
+        height: 3rem;
+        padding: 0 1rem;
+
+        @media (min-width: 768px) {
+            padding: 0 3rem;
+        }
+    }
+    
+    h1 {
+        font-size: 1rem;
+        line-height: 1;
+        padding: 0;
+        margin: 0;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,177 @@
+/** Control Items **/
+.controlItemsWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    border-radius: 1rem;
+
+    .controlItems {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        border-radius: 1rem;
+        border: 1px solid #d9d9d9;
+        background: var(--c-lightAlt);
+    }
+
+    .controlItem {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            font-weight: 500;
+        }
+    }
+}
+
+/** Control Item inputs:not(.hasCheckbox):not(.hasRange) **/
+input[type=text],
+input[type=number],
+input[type=color] {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--c--border);
+    background: var(--c-light);
+    color: var(--c-dark);
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    transition: var(--t-ease);
+
+    &:focus {
+        border-color: var(--c-purple);
+    }
+
+    &input[type=number],
+    &input[type=text] {
+        padding: 0 0.5rem;
+    }
+
+    &input[type=color] {
+        width: 4rem;
+    }
+}
+
+/** If checkbox **/
+.hasCheckbox {
+    display: flex;
+    align-items: center;
+
+    label {
+        padding: 0 0.5rem;
+        cursor: pointer;
+    }
+
+    .checkboxWrapper {
+        position: relative;
+        width: 0.875rem;
+        height: 0.875rem;
+
+        input {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            margin: auto;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            transition: var(--t-ease);
+        }
+
+        &::before {
+            border-radius: 0.25rem;
+            border: 1px solid var(--c-purple);
+        }
+
+        &::after {
+            transform: translate(1.5px, -4.5px);
+            color: var(--c-light);
+        }
+
+        &.active {
+            &::before {
+                background: var(--c-purple);
+            }
+
+            &::after {
+                content: '✔';
+            }
+        }
+    }
+}
+
+/** If Range **/
+.hasRange {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    input[type='range'] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 0.25rem;
+        background: linear-gradient(90deg, var(--c-orange) 0%, var(--c-purple) 100%);
+        border-radius: 0.25rem;
+        outline: none;
+        opacity: 0.7;
+        transition: var(--t-ease);
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    label {
+        width: 6rem;
+    }
+}
+
+/** Default Colours **/
+.quickFillColours {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+
+    .quickFillColourItems {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .quickFillColour {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        overflow: hidden;
+        border: 1px solid var(--c--border);
+        border-radius: 0.5rem;
+        cursor: pointer;
+
+        @media (min-width: 1400px) {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}
